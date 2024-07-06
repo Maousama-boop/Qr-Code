@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Scan Qrcode</title>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="icon" href="scanner-qrcode-icon.png" title="Scanner Qrcode And Open Qrcode" type="" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.0/dist/sweetalert2.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/61069b1dda.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+</head>
+<body>
+  <ons-page>
+    <div class="result-card">
+      <h1>QR Scanner</h1>
+      <div class="load-video">
+       <div class="scan-animation"></div>
+       <img src="border-scanner.png" alt="" class="border-scan"/>
+      <video id="video" autoplay></video>
+      <canvas id="canvas" style="display: none;"></canvas>
+     <div class="download-content scan-kamera">
+      <p class="play-title">Scan Again</p>
+      <ons-icon class="play-again" onclick="playScan()" icon="fa-rotate-left"></ons-icon>
+      </div>
+      </div>
+      <div id="result">No QR Code detected.</div>
+      </div>
+      
+      <a href="index.html">
+        <ons-fab position="bottom left" style="display:flex; justify-content:center; align-items:center; font-size:35px;">
+          <i class="fa-solid fa-left-long"></i>
+          </ons-fab>
+      </a>
+    </ons-page>
+<script src="script2.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

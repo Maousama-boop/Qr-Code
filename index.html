@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Qrcode</title>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="icon" href="scanner-qrcode-icon.png" title="Scanner Qrcode And Open Qrcode" type="" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.0/dist/sweetalert2.min.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/61069b1dda.js" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+</head>
+<body style="text-transform:capitalize;">
+  <ons-page>
+    <ons-toolbar class="toolbar-background">
+     <div class="center">QrCode</div>
+    <div class="right">
+      <ons-toolbar-button class="change-bg">
+       <i class="fa-solid fa-moon change-icon"></i>
+      </ons-toolbar-button>
+    </div>
+    </ons-toolbar>
+    <ons-tabbar swipeable position="bottom">
+      <ons-tab page="create.html" label="create qrcode" icon="fa-plus" active active-icon="fa-qrcode"></ons-tab>
+      <ons-tab page="scan.html" label="scan qrcode" icon="fa-camera" active-icon="fa-qrcode"></ons-tab>
+    </ons-tabbar>
+    </ons-page>
+  <template id="scan.html">
+    <ons-page id="scan" class="custom-background">
+      <div class="page__background"></div>
+      <a href="scan.html" class="button active scan weight"><i class="fa-solid fa-camera"></i>Scan</a>
+      <div class="button active scan">
+        <i class="fa-solid fa-file-import"></i>
+        <label for="fileInput" class="weight">Input</label>
+        <input type="file" id="fileInput" accept="image/*" onchange="scanQRCode(this)"/>
+      </div>
+     <div class="result-card custom">
+    <h1>Result:</h1>
+    <canvas id="canvas"></canvas>
+    <div class="download-qrcode">
+       <img id="image-result" class="qrcode-img" src="scanner-qrcode-icon.png" alt="your qrcode" width="55%"/>
+      <div class="loading-download scan">
+        <div class="loader"></div>
+        </div>
+      </div>
+    <div id="result">QR Code Detected TEXT/URL:</div>
+     </div>
+    </ons-page>
+  </template>
+  <template id="create.html">
+    <ons-page id="create" class="custom-background">
+     <div class="page__background"></div>
+     <div id="create-qrcode">
+      <div class="download-qrcode">
+       <img id="qrcode-img" class="qrcode-img" src="scanner-qrcode-icon.png" alt="your qrcode"/>
+      <div class="loading-download">
+        <div class="loader"></div>
+      </div>
+       <div class="download-content">
+         <p class="download-title">Download Qrcode</p>
+         <ons-icon icon="fa-download" id="download-button"></ons-icon>
+       </div>
+      </div>
+       <p class="title">Generate your qrcode</p>
+        <div class="action-sheet-mask aktif action-sheet-mask--material"></div>
+        <div class="action-sheet aktif action-sheet--material">
+          <li class="list-item list-item--tappable">
+            <div class="list-item__left">
+              <label class="radio-button">
+                <input type="radio" id="r1" class="radio-button__input" name="r" checked="checked">
+                <div class="radio-button__checkmark"></div>
+              </label>
+            </div>
+            <label for="r1" class="list-item__center">URL/LINK
+            </label>
+          </li>
+          <li class="list-item list-item--tappable">
+            <div class="list-item__left">
+              <label class="radio-button">
+                <input type="radio" id="r2" class="radio-button__input" name="r">
+                <div class="radio-button__checkmark"></div>
+              </label>
+            </div>
+            <label for="r2" class="list-item__center">Whatsapp
+            </label>
+          </li>
+          <li class="list-item list-item--tappable">
+            <div class="list-item__left">
+              <label class="radio-button">
+                <input type="radio" id="r3" class="radio-button__input" name="r">
+                <div class="radio-button__checkmark"></div>
+              </label>
+            </div>
+            <label for="r3" class="list-item__center">
+              TEXT
+            </label>
+          </li>
+         <button class="action-sheet-button action-sheet-button--material"><i class="ion-ios-close action-sheet-icon--material"></i>Cancel</button>
+       </div>
+       <div class="input-and-button">
+       <input class="link-qrcode weight" type="text" name="make" id="make-qrcode" placeholder="Put Your Link Here"/>
+      <div class="button-between">
+       <button class="button active button-generate weight" id="generateQrCode">Generate Qrcode</button>
+       </div>
+      </div>
+     </div>
+    </ons-page>
+  </template>
+  <script src="script.js" type="text/javascript" charset="utf-8"></script>
+  <script src="script3.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
