@@ -1,8 +1,11 @@
 let changeBg = document.querySelector(".change-bg");
 const changeIcon = document.querySelector(".change-icon");
 changeBg.onclick = () => {
-  changeIcon.classList.toggle('fa-moon');
-  changeIcon.classList.toggle('fa-sun');
+  if(changeIcon.textContent === "sunny") {
+    changeIcon.textContent = "clear_night";
+  } else {
+    changeIcon.textContent = "sunny"
+  }
   document.body.classList.toggle("mode-dark");
 };
 
