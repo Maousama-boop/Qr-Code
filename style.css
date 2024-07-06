@@ -52,6 +52,7 @@ ons-page .center, ons-page i, .tabbar__item, .tabbar__icon, .tabbar__label{
 }
 
 .change-icon{
+  color: var(--text-color);
   font-size: 25px;
 }
 
