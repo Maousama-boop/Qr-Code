@@ -51,12 +51,11 @@ ons-page .center, ons-page i, .tabbar__item, .tabbar__icon, .tabbar__label{
   font-size: 20px;
 }
 
-.change-icon{
+.change-bg{
   display: flex;
-  text-align: center;
   justify-content: center;
+  align-items: center;
   color: var(--text-color);
-  font-size: 40px;
 }
 
 .download-qrcode{
