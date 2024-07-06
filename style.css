@@ -52,8 +52,11 @@ ons-page .center, ons-page i, .tabbar__item, .tabbar__icon, .tabbar__label{
 }
 
 .change-icon{
+  display: flex;
+  text-align: center;
+  justify-content: center;
   color: var(--text-color);
-  font-size: 35px;
+  font-size: 40px;
 }
 
 .download-qrcode{
